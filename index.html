@@ -191,6 +191,12 @@
   @media(max-width:860px){
     .wrap{padding:0 28px;}
     .nav-inner{padding-left:28px;padding-right:28px;}
+    .eyebrow-row{gap:8px;flex-wrap:nowrap;}
+    .eyebrow{padding:5px 10px 5px 5px;font-size:0.68rem;gap:5px;}
+    .eyebrow-logo{height:18px;}
+    .audio-player{padding:4px 10px 4px 4px;font-size:0.62rem;gap:5px;}
+    .audio-play-btn{width:24px;height:24px;font-size:0.6rem;}
+    .audio-title .note-emoji{display:none;}
     .subjects{gap:8px;}
     .chip{padding:8px 10px;font-size:0.78rem;}
     .hero-grid{grid-template-columns:1fr;}
@@ -232,7 +238,7 @@
         <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.png" alt="Logótipo UZT"> Universo Educativo</div>
         <div class="audio-player">
           <button class="audio-play-btn" id="audioBtn" onclick="toggleZeAudio()" aria-label="Reproduzir">▶</button>
-          <span class="audio-title">🎵 Zé Traquina é fixe</span>
+          <span class="audio-title"><span class="note-emoji">🎵</span> Zé Traquina é fixe</span>
           <audio id="zeAudio" src="https://files.catbox.moe/r850fc.mp3" preload="none"></audio>
         </div>
       </div>
