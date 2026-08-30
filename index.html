@@ -58,12 +58,22 @@
 
   .hero{position:relative;padding:32px 0 40px;overflow:hidden;}
   .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;}
+  .eyebrow-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:18px;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:700;
-    padding:6px 16px 6px 6px;border-radius:999px;font-size:0.85rem;margin-bottom:18px;
+    padding:6px 16px 6px 6px;border-radius:999px;font-size:0.85rem;margin-bottom:0;
     box-shadow:0 3px 0 rgba(0,0,0,0.1);
     animation:floaty-soft 3.2s ease-in-out infinite;
+  }
+  .audio-player{
+    display:inline-flex;align-items:center;gap:10px;
+    background:#fff;border:2px solid var(--navy);border-radius:999px;
+    padding:6px 16px 6px 6px;font-family:'Baloo 2';font-weight:600;font-size:0.8rem;color:var(--navy);
+  }
+  .audio-play-btn{
+    width:30px;height:30px;border-radius:50%;border:none;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:0.75rem;cursor:pointer;flex-shrink:0;
   }
   .eyebrow-logo{height:28px;width:auto;}
   .hero h1{font-size:3rem;font-weight:800;margin-bottom:18px;}
@@ -218,7 +228,14 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.png" alt="Logótipo UZT"> Universo Educativo</div>
+      <div class="eyebrow-row">
+        <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.png" alt="Logótipo UZT"> Universo Educativo</div>
+        <div class="audio-player">
+          <button class="audio-play-btn" id="audioBtn" onclick="toggleZeAudio()" aria-label="Reproduzir">▶</button>
+          <span class="audio-title">🎵 Zé Traquina é fixe</span>
+          <audio id="zeAudio" src="https://files.catbox.moe/r850fc.mp3" preload="none"></audio>
+        </div>
+      </div>
       <h1>Aprender é uma <span>aventura</span>, não uma obrigação.</h1>
       <p class="lead">O Zé Traquina leva os mais pequenos a explorar letras, números, ciência e a nossa língua — a brincar, em português de Portugal.</p>
       <div class="cta-row">
@@ -377,6 +394,27 @@
   </div>
   <div class="foot-bottom">© 2026 Zé Traquina · Feito com carinho em Portugal</div>
 </footer>
+
+<script>
+  function toggleZeAudio(){
+    const audio = document.getElementById('zeAudio');
+    const btn = document.getElementById('audioBtn');
+    if (audio.paused) {
+      audio.play();
+      btn.textContent = '⏸';
+    } else {
+      audio.pause();
+      btn.textContent = '▶';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    const audio = document.getElementById('zeAudio');
+    const btn = document.getElementById('audioBtn');
+    if (audio) {
+      audio.addEventListener('ended', function(){ btn.textContent = '▶'; });
+    }
+  });
+</script>
 
 </body>
 </html>
