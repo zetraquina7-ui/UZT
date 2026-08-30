@@ -39,7 +39,6 @@
   a{color:inherit;}
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
 
-  /* NAVBAR */
   header.nav{
     position:sticky;top:0;z-index:50;
     background:rgba(255,251,242,0.9);
@@ -48,23 +47,18 @@
   }
   .nav-inner{
     display:flex;align-items:center;justify-content:space-between;
-    padding:14px 24px;max-width:1140px;margin:0 auto;
+    padding:12px 24px;max-width:1140px;margin:0 auto;
   }
   .brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:700;font-size:1.25rem;color:var(--navy);}
-  .brand .dot{width:14px;height:14px;border-radius:50%;background:var(--coral);display:inline-block;}
+  .brand img{height:42px;width:auto;}
   .pill{
     background:var(--navy);color:#fff;font-family:'Baloo 2';font-weight:600;
     padding:10px 20px;border-radius:999px;font-size:0.85rem;white-space:nowrap;
     box-shadow:0 3px 0 rgba(0,0,0,0.15);
   }
 
-  /* HERO */
-  .hero{
-    position:relative;padding:70px 0 40px;overflow:hidden;
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;
-  }
+  .hero{position:relative;padding:70px 0 40px;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:700;
@@ -99,7 +93,7 @@
     box-shadow:0 20px 40px rgba(27,42,80,0.25);
     background:#fff;overflow:hidden;
   }
-  .phone-mock img{width:100%;height:380px;object-fit:cover;background:linear-gradient(160deg,var(--sky),var(--yellow));}
+  .phone-mock img{width:100%;height:460px;object-fit:cover;object-position:top;}
   .float-badge{
     position:absolute;background:#fff;border-radius:18px;padding:10px 14px;
     font-family:'Baloo 2';font-weight:700;font-size:0.85rem;color:var(--navy);
@@ -116,7 +110,6 @@
     padding:8px 18px;font-family:'Baloo 2';font-weight:600;font-size:0.9rem;color:var(--navy);
   }
 
-  /* PATH / SIGNATURE ELEMENT */
   .path-section{position:relative;padding:60px 0 20px;}
   .path-title{text-align:center;margin-bottom:10px;}
   .path-title h2{font-size:2.1rem;}
@@ -140,21 +133,16 @@
   .feature h3{font-size:1.7rem;margin-bottom:12px;}
   .feature p{color:var(--ink-soft);margin-bottom:16px;}
   .feature ul{list-style:none;}
-  .feature ul li{
-    padding:6px 0 6px 26px;position:relative;color:var(--ink);font-weight:600;font-size:0.95rem;
-  }
-  .feature ul li::before{
-    content:"●";position:absolute;left:0;font-size:0.7rem;top:12px;color:var(--coral);
-  }
+  .feature ul li{padding:6px 0 6px 26px;position:relative;color:var(--ink);font-weight:600;font-size:0.95rem;}
+  .feature ul li::before{content:"●";position:absolute;left:0;font-size:0.7rem;top:12px;color:var(--coral);}
   .f-art{
     border-radius:28px;overflow:hidden;
     box-shadow:0 16px 32px rgba(27,42,80,0.15);
-    aspect-ratio:4/3;background:linear-gradient(135deg,var(--sky),var(--lilac));
+    aspect-ratio:9/16;background:linear-gradient(135deg,var(--sky),var(--lilac));
+    max-width:280px;margin:0 auto;border:8px solid var(--navy);
   }
-  .f-art img{width:100%;height:100%;object-fit:cover;}
-  .f-art.placeholder{display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Baloo 2';font-weight:700;text-align:center;padding:20px;}
+  .f-art img{width:100%;height:100%;object-fit:cover;object-position:top;}
 
-  /* CTA STRIP */
   .cta-strip{
     background:var(--navy);color:#fff;border-radius:32px;margin:60px auto;
     padding:56px 40px;text-align:center;max-width:1140px;
@@ -170,10 +158,10 @@
     display:flex;align-items:center;gap:10px;opacity:0.9;
   }
 
-  /* FOOTER */
   footer{padding:50px 0 30px;border-top:3px solid var(--navy);margin-top:40px;}
   .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:24px;}
-  .foot-brand{font-family:'Baloo 2';font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:8px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-family:'Baloo 2';font-weight:700;font-size:1.15rem;color:var(--navy);margin-bottom:8px;}
+  .foot-brand img{height:34px;width:auto;}
   .foot-tag{color:var(--ink-soft);max-width:320px;font-size:0.9rem;}
   .foot-links{display:flex;gap:40px;flex-wrap:wrap;}
   .foot-col h4{font-family:'Baloo 2';font-size:0.9rem;color:var(--navy);margin-bottom:10px;}
@@ -190,7 +178,8 @@
     .trail svg.line{display:none;}
     .blob{width:280px;height:280px;}
     .phone-mock{width:200px;}
-    .phone-mock img{height:290px;}
+    .phone-mock img{height:350px;}
+    .f-art{max-width:220px;}
   }
   @media (prefers-reduced-motion: reduce){
     .blob,.float-badge{animation:none;}
@@ -201,7 +190,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="brand"><span class="dot"></span>Zé Traquina</div>
+    <div class="brand"><img src="zetraquina-logo.jpg" alt="Logótipo UZT">Zé Traquina</div>
     <div class="pill">Brevemente na Google Play</div>
   </div>
 </header>
@@ -211,7 +200,7 @@
     <div>
       <div class="eyebrow">✨ Universo Educativo</div>
       <h1>Aprender é uma <span>aventura</span>, não uma obrigação.</h1>
-      <p class="lead">O Zé Traquina leva os mais pequenos a explorar letras, números, o mundo e a nossa língua — a brincar, em português de Portugal.</p>
+      <p class="lead">O Zé Traquina leva os mais pequenos a explorar letras, números, ciência e a nossa língua — a brincar, em português de Portugal.</p>
       <div class="cta-row">
         <div class="btn-primary">🚀 Em preparação para a Google Play</div>
       </div>
@@ -219,7 +208,7 @@
       <div class="subjects">
         <span class="chip">🔤 Letras</span>
         <span class="chip">🔢 Números</span>
-        <span class="chip">🌍 Mundo</span>
+        <span class="chip">🪐 Ciência</span>
         <span class="chip">🇵🇹 Português</span>
         <span class="chip">🎮 Jogos</span>
       </div>
@@ -227,10 +216,10 @@
     <div class="hero-art">
       <div class="blob"></div>
       <div class="phone-mock">
-        <img src="assets/screenshot-inicio.jpg" alt="Ecrã inicial da app Zé Traquina" onerror="this.style.display='none'">
+        <img src="zetraquina-inicio.jpg" alt="Ecrã inicial da app Zé Traquina">
       </div>
       <div class="float-badge b1">⭐ ZéAI</div>
-      <div class="float-badge b2">🗺️ Atlas</div>
+      <div class="float-badge b2">🎮 Jogos</div>
     </div>
   </div>
 </section>
@@ -238,7 +227,7 @@
 <section class="path-section wrap">
   <div class="path-title">
     <h2>O caminho do Zé Traquina</h2>
-    <p>Cinco paragens, um só universo. Cada uma ensina de uma forma diferente.</p>
+    <p>Seis paragens, um só universo. Cada uma ensina de uma forma diferente.</p>
   </div>
 
   <div class="trail">
@@ -247,20 +236,18 @@
     </svg>
 
     <div class="feature">
-      <div class="stop" style="background:var(--sky);">1</div>
+      <div class="stop" style="background:var(--yellow);">1</div>
       <div class="f-text">
-        <div class="f-eyebrow" style="color:var(--sky);">APRENDER</div>
-        <h3>O Atlas do Zé Traquinas</h3>
-        <p>Um mapa-múndi interativo onde cada país é uma porta para conhecer o mundo — geografia que se explora a tocar, não a decorar.</p>
+        <div class="f-eyebrow" style="color:#B8860B;">INÍCIO</div>
+        <h3>A porta de entrada do universo</h3>
+        <p>Um ecrã principal colorido, com destaques diários e o Zé Traquina sempre à mão para dar as boas-vindas e sugerir o que aprender hoje.</p>
         <ul>
-          <li>Mapa interativo com países e curiosidades</li>
-          <li>Cantinho PT com canais portugueses para crianças</li>
-          <li>Conteúdo pensado para pequenos exploradores</li>
+          <li>Destaques que mudam todos os dias</li>
+          <li>Acesso rápido a Aprender, Jogos, Vídeos e ZéAI</li>
+          <li>Mensagens diárias do Zé Traquina</li>
         </ul>
       </div>
-      <div class="f-art placeholder" style="background:linear-gradient(135deg,var(--sky),#8FE0F7);">
-        <img src="assets/screenshot-atlas.jpg" alt="Atlas do Zé Traquinas" onerror="this.style.display='none'">
-      </div>
+      <div class="f-art"><img src="zetraquina-inicio.jpg" alt="Ecrã de início da app"></div>
     </div>
 
     <div class="feature">
@@ -268,67 +255,74 @@
       <div class="f-text">
         <div class="f-eyebrow" style="color:var(--coral);">CONVERSAR</div>
         <h3>ZéAI, o amigo que responde a tudo</h3>
-        <p>Um chat pensado para crianças, onde o Zé Traquina responde a perguntas, conta coisas novas e incentiva a curiosidade — sempre em português de Portugal.</p>
+        <p>Um chat pensado para crianças, onde o Zé Traquina responde a perguntas, conta coisas novas e incentiva a curiosidade — por voz ou por escrito, sempre em português de Portugal.</p>
         <ul>
+          <li>Conversa por voz ou por texto</li>
           <li>Respostas simples e adequadas à idade</li>
           <li>Personalidade própria do Zé Traquina</li>
-          <li>Incentiva perguntas e curiosidade</li>
         </ul>
       </div>
-      <div class="f-art placeholder" style="background:linear-gradient(135deg,var(--coral),#FF9B8F);">
-        <img src="assets/screenshot-zeai.jpg" alt="ZéAI chat" onerror="this.style.display='none'">
-      </div>
+      <div class="f-art"><img src="zetraquina-zeai.jpg" alt="Chat com o ZéAI"></div>
     </div>
 
     <div class="feature">
-      <div class="stop" style="background:var(--green);">3</div>
+      <div class="stop" style="background:var(--sky);">3</div>
+      <div class="f-text">
+        <div class="f-eyebrow" style="color:var(--sky);">APRENDER</div>
+        <h3>A Escola Mágica do Zé Traquina</h3>
+        <p>Abecedário, vogais, números e até o Sistema Solar — cada tema organizado em cartões simples, com progresso visível e conteúdo pensado para pequenos exploradores.</p>
+        <ul>
+          <li>Abecedário completo com divisão silábica</li>
+          <li>Números, vogais e ciência de forma visual</li>
+          <li>Voz ligada para acompanhar a leitura</li>
+        </ul>
+      </div>
+      <div class="f-art"><img src="zetraquina-aprender.jpg" alt="Secção Aprender da app"></div>
+    </div>
+
+    <div class="feature">
+      <div class="stop" style="background:var(--green);">4</div>
       <div class="f-text">
         <div class="f-eyebrow" style="color:var(--green);">JOGAR</div>
         <h3>Jogos que ensinam sem parecer</h3>
-        <p>Do Bubble Shooter aos desafios de números por voz, cada jogo tem uma razão de ser — reflexos, contagem, atenção.</p>
+        <p>Do Detetive de Palavras ao Puzzle Bubble, cada jogo tem uma razão de ser — atenção, raciocínio, agilidade — e recompensa o progresso com estrelas.</p>
         <ul>
-          <li>Jogos originais, feitos de raiz</li>
-          <li>Desafio de números com reconhecimento de voz</li>
-          <li>Progressão pensada para crianças</li>
+          <li>Vários jogos originais, cada um com o seu foco</li>
+          <li>Níveis de dificuldade e progressão por estrelas</li>
+          <li>Pensados para sessões curtas e divertidas</li>
         </ul>
       </div>
-      <div class="f-art placeholder" style="background:linear-gradient(135deg,var(--green),#A6E8BC);">
-        <img src="assets/screenshot-jogos.jpg" alt="Jogos da app" onerror="this.style.display='none'">
-      </div>
-    </div>
-
-    <div class="feature">
-      <div class="stop" style="background:var(--yellow);">4</div>
-      <div class="f-text">
-        <div class="f-eyebrow" style="color:#B8860B;">HISTÓRIAS</div>
-        <h3>Histórias Interativas</h3>
-        <p>Uma seleção de vídeos e histórias em português de Portugal, organizadas por temas, para ver e ouvir em família.</p>
-        <ul>
-          <li>Curadoria de conteúdo em PT-PT</li>
-          <li>Sinopses simples antes de cada história</li>
-          <li>Sem distrações, só o que interessa</li>
-        </ul>
-      </div>
-      <div class="f-art placeholder" style="background:linear-gradient(135deg,var(--yellow),#FFE49B);">
-        <img src="assets/screenshot-historias.jpg" alt="Histórias Interativas" onerror="this.style.display='none'">
-      </div>
+      <div class="f-art"><img src="zetraquina-jogos.jpg" alt="Secção de Jogos da app"></div>
     </div>
 
     <div class="feature">
       <div class="stop" style="background:var(--lilac);">5</div>
       <div class="f-text">
-        <div class="f-eyebrow" style="color:#7A63B8;">FAMÍLIA</div>
-        <h3>Feita para pais confiarem</h3>
-        <p>Sem anúncios invasivos, sem ligações externas escondidas. Um espaço fechado, pensado de início ao fim para crianças.</p>
+        <div class="f-eyebrow" style="color:#7A63B8;">PRATICAR</div>
+        <h3>Fichas por ano de escolaridade</h3>
+        <p>Português, Matemática e Estudo do Meio organizados por ano (1.º ao 4.º), com fichas interativas e PDFs para imprimir e praticar em casa.</p>
         <ul>
-          <li>Ambiente fechado e seguro</li>
-          <li>Política de privacidade transparente</li>
-          <li>Sem recolha de dados desnecessária</li>
+          <li>Fichas interativas com progresso guardado</li>
+          <li>Organizadas por ano e por disciplina</li>
+          <li>PDFs para descarregar e imprimir</li>
         </ul>
       </div>
-      <div class="f-art placeholder" style="background:linear-gradient(135deg,var(--lilac),#D9CDF2);">
-        <img src="assets/screenshot-familia.jpg" alt="Segurança para a família" onerror="this.style.display='none'">
+      <div class="f-art"><img src="zetraquina-fichas.jpg" alt="Secção de Fichas da app"></div>
+    </div>
+
+    <div class="feature">
+      <div class="stop" style="background:#FF9AC4;">6</div>
+      <div class="f-text">
+        <div class="f-eyebrow" style="color:#E0559A;">VER E OUVIR</div>
+        <h3>Vídeos, músicas e o Cantinho PT</h3>
+        <p>O canal oficial do Zé Traquina com músicas originais, histórias e um Cantinho PT dedicado a canais portugueses para crianças.</p>
+        <ul>
+          <li>Músicas e vídeos originais do Zé Traquina</li>
+          <li>Cantinho PT com conteúdo português selecionado</li>
+          <li>Histórias organizadas por categoria</li>
+        </ul>
       </div>
+      <div class="f-art"><img src="zetraquina-videos.jpg" alt="Secção de Vídeos e Músicas da app"></div>
     </div>
   </div>
 </section>
@@ -346,7 +340,7 @@
 <footer class="wrap">
   <div class="foot-grid">
     <div>
-      <div class="foot-brand">Zé Traquina</div>
+      <div class="foot-brand"><img src="zetraquina-logo.jpg" alt="Logótipo UZT">Zé Traquina</div>
       <p class="foot-tag">Universo Educativo Zé Traquina — a app portuguesa que ensina letras, números, mundo e português aos mais pequenos.</p>
     </div>
     <div class="foot-links">
