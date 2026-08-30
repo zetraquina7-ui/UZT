@@ -191,13 +191,12 @@
     .phone-mock img{height:350px;}
     .f-art{max-width:220px;}
     .eyebrow-logo{height:22px;}
-    .float-badge{padding:6px 9px;font-size:0.68rem;gap:4px;border-radius:12px;}
-    .float-badge.b1{top:6%;right:0;}
-    .float-badge.b2{bottom:20%;left:0;}
-    .float-badge.b3{top:30%;left:0;}
-    .float-badge.b4{top:54%;right:0;}
-    .float-badge.b5{bottom:10%;right:0;}
-    .float-badge.b6{bottom:0;left:8%;}
+    .hero-art{display:flex;flex-direction:column;align-items:center;}
+    .float-badge{
+      position:static !important;animation:none !important;
+      padding:8px 14px;font-size:0.8rem;border-radius:14px;
+    }
+    .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;max-width:320px;}
   }
   @media (prefers-reduced-motion: reduce){
     .blob,.float-badge{animation:none;}
@@ -229,12 +228,14 @@
       <div class="phone-mock">
         <img src="zetraquina-poster.png" alt="Universo Educativo Zé Traquina">
       </div>
-      <div class="float-badge b1">⭐ ZéAI</div>
-      <div class="float-badge b2">🎮 Jogos</div>
-      <div class="float-badge b3">📚 Aprender</div>
-      <div class="float-badge b4">📝 Fichas</div>
-      <div class="float-badge b5">🎬 Vídeos</div>
-      <div class="float-badge b6">👨‍👩‍👧 Espaço Pais</div>
+      <div class="badge-row">
+        <div class="float-badge b1">⭐ ZéAI</div>
+        <div class="float-badge b2">🎮 Jogos</div>
+        <div class="float-badge b3">📚 Aprender</div>
+        <div class="float-badge b4">📝 Fichas</div>
+        <div class="float-badge b5">🎬 Vídeos</div>
+        <div class="float-badge b6">👨‍👩‍👧 Espaço Pais</div>
+      </div>
     </div>
   </div>
 </section>
