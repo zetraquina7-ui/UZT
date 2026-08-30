@@ -60,9 +60,10 @@
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--yellow);color:var(--navy);font-family:'Baloo 2';font-weight:700;
-    padding:8px 16px;border-radius:999px;font-size:0.85rem;margin-bottom:18px;
+    padding:6px 16px 6px 6px;border-radius:999px;font-size:0.85rem;margin-bottom:18px;
     box-shadow:0 3px 0 rgba(0,0,0,0.1);
   }
+  .eyebrow-logo{height:28px;width:auto;}
   .hero h1{font-size:3rem;font-weight:800;margin-bottom:18px;}
   .hero h1 span{color:var(--coral);}
   .hero p.lead{font-size:1.15rem;color:var(--ink-soft);max-width:480px;margin-bottom:28px;}
@@ -98,14 +99,20 @@
     box-shadow:0 8px 20px rgba(27,42,80,0.15);display:flex;align-items:center;gap:6px;
     animation:floaty 4s ease-in-out infinite;
   }
-  .float-badge.b1{top:20px;right:-10px;animation-delay:0s;}
-  .float-badge.b2{bottom:60px;left:-25px;animation-delay:1.5s;}
+  .float-badge.b1{top:8%;right:-8%;animation-delay:0s;}
+  .float-badge.b2{bottom:22%;left:-10%;animation-delay:1.5s;}
+  .float-badge.b3{top:32%;left:-14%;animation-delay:0.8s;}
+  .float-badge.b4{top:56%;right:-14%;animation-delay:2.2s;}
+  .float-badge.b5{bottom:6%;right:2%;animation-delay:1.1s;}
+  .float-badge.b6{bottom:-4%;left:18%;animation-delay:2.8s;}
   @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 
-  .subjects{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;}
+  .subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;}
+  .subjects .chip{justify-content:center;text-align:center;}
   .chip{
     background:#fff;border:2px solid var(--navy);border-radius:999px;
     padding:8px 18px;font-family:'Baloo 2';font-weight:600;font-size:0.9rem;color:var(--navy);
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;text-align:center;
   }
 
   .path-section{position:relative;padding:60px 0 20px;}
@@ -170,6 +177,8 @@
   @media(max-width:860px){
     .wrap{padding:0 28px;}
     .nav-inner{padding-left:28px;padding-right:28px;}
+    .subjects{gap:8px;}
+    .chip{padding:8px 10px;font-size:0.78rem;}
     .hero-grid{grid-template-columns:1fr;}
     .hero h1{font-size:2.2rem;}
     .feature{grid-template-columns:1fr;padding:36px 0;}
@@ -180,7 +189,7 @@
     .phone-mock{width:200px;}
     .phone-mock img{height:350px;}
     .f-art{max-width:220px;}
-    .nav-logo{height:44px;}
+    .eyebrow-logo{height:22px;}
   }
   @media (prefers-reduced-motion: reduce){
     .blob,.float-badge{animation:none;}
@@ -191,7 +200,6 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <img class="nav-logo" src="zetraquina-logo.jpg" alt="Logótipo UZT">
     <img class="nav-banner" src="zetraquina-banner.png" alt="Universo Educativo Zé Traquina">
     <div class="pill">Brevemente na Google Play</div>
   </div>
@@ -200,29 +208,18 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">✨ Universo Educativo</div>
+      <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.jpg" alt="Logótipo UZT"> Universo Educativo</div>
       <h1>Aprender é uma <span>aventura</span>, não uma obrigação.</h1>
       <p class="lead">O Zé Traquina leva os mais pequenos a explorar letras, números, ciência e a nossa língua — a brincar, em português de Portugal.</p>
       <div class="cta-row">
         <div class="btn-primary">🚀 Em preparação para a Google Play</div>
       </div>
       <div class="btn-note">Sem submissão ainda — a app está em fase final de testes.</div>
-      <div class="subjects">
-        <span class="chip">🔤 Letras</span>
-        <span class="chip">🔢 Números</span>
-        <span class="chip">🪐 Ciência</span>
-        <span class="chip">🇵🇹 Português</span>
-        <span class="chip">📚 Aprender</span>
-        <span class="chip">🎮 Jogos</span>
-        <span class="chip">📝 Fichas</span>
-        <span class="chip">🎬 Vídeos</span>
-        <span class="chip">👨‍👩‍👧 Espaço Pais</span>
-      </div>
     </div>
     <div class="hero-art">
       <div class="blob"></div>
       <div class="phone-mock">
-        <img src="zetraquina-inicio.jpg" alt="Ecrã inicial da app Zé Traquina">
+        <img src="zetraquina-poster.png" alt="Universo Educativo Zé Traquina">
       </div>
       <div class="float-badge b1">⭐ ZéAI</div>
       <div class="float-badge b2">🎮 Jogos</div>
