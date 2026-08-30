@@ -49,7 +49,14 @@
     padding:20px 24px 4px;max-width:1140px;margin:0 auto;
   }
   .nav-logo{height:56px;width:auto;}
-  .nav-banner{width:100%;max-width:640px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.35);}
+  .nav-banner-wrap{position:relative;width:100%;max-width:640px;}
+  .nav-banner{width:100%;display:block;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,0.35);}
+  .banner-audio-player{
+    position:absolute;left:5%;bottom:6%;width:auto;max-width:48%;
+    padding:5px 12px 5px 5px;font-size:0.72rem;gap:6px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.35);
+  }
+  .banner-audio-player .audio-play-btn{width:26px;height:26px;font-size:0.65rem;}
   .pill{
     background:#fff;color:var(--navy);font-family:'Baloo 2';font-weight:600;
     padding:10px 20px;border-radius:999px;font-size:0.85rem;white-space:nowrap;
@@ -161,6 +168,17 @@
     max-width:280px;margin:0 auto;border:8px solid var(--navy);
   }
   .f-art img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .f-art-audio{position:relative;}
+  .onscreen-audio-btn{
+    position:absolute;left:46%;right:3%;top:23.8%;height:6.4%;
+    background:transparent;border:none;cursor:pointer;padding:0;
+    display:flex;align-items:center;justify-content:flex-end;
+  }
+  .onscreen-audio-icon{
+    width:15%;aspect-ratio:1;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:0.7rem;
+  }
 
   .cta-strip{
     background:var(--navy);color:#fff;border-radius:32px;margin:60px auto;
@@ -197,6 +215,7 @@
     .audio-player{padding:4px 10px 4px 4px;font-size:0.62rem;gap:5px;}
     .audio-play-btn{width:24px;height:24px;font-size:0.6rem;}
     .audio-title .note-emoji{display:none;}
+    .banner-audio-player{max-width:56%;bottom:5%;left:4%;}
     .subjects{gap:8px;}
     .chip{padding:8px 10px;font-size:0.78rem;}
     .hero-grid{grid-template-columns:1fr;}
@@ -226,7 +245,14 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <img class="nav-banner" src="zetraquina-banner.png" alt="Universo Educativo Zé Traquina">
+    <div class="nav-banner-wrap">
+      <img class="nav-banner" src="zetraquina-banner.png" alt="Universo Educativo Zé Traquina">
+      <div class="audio-player banner-audio-player">
+        <button class="audio-play-btn" id="audioBtn" onclick="toggleZeAudio()" aria-label="Reproduzir">▶</button>
+        <span class="audio-title"><span class="note-emoji">🎵</span> Zé Traquina é fixe</span>
+        <audio id="zeAudio" src="https://files.catbox.moe/r850fc.mp3" preload="none"></audio>
+      </div>
+    </div>
     <div class="pill">Brevemente na Google Play</div>
   </div>
 </header>
@@ -234,14 +260,7 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow-row">
-        <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.png" alt="Logótipo UZT"> Universo Educativo</div>
-        <div class="audio-player">
-          <button class="audio-play-btn" id="audioBtn" onclick="toggleZeAudio()" aria-label="Reproduzir">▶</button>
-          <span class="audio-title"><span class="note-emoji">🎵</span> Zé Traquina é fixe</span>
-          <audio id="zeAudio" src="https://files.catbox.moe/r850fc.mp3" preload="none"></audio>
-        </div>
-      </div>
+      <div class="eyebrow"><img class="eyebrow-logo" src="zetraquina-logo.png" alt="Logótipo UZT"> Universo Educativo</div>
       <h1>Aprender é uma <span>aventura</span>, não uma obrigação.</h1>
       <p class="lead">O Zé Traquina leva os mais pequenos a explorar letras, números, ciência e a nossa língua — a brincar, em português de Portugal.</p>
       <div class="cta-row">
@@ -289,7 +308,12 @@
           <li>Mensagens diárias do Zé Traquina</li>
         </ul>
       </div>
-      <div class="f-art"><img src="zetraquina-inicio.jpg" alt="Ecrã de início da app"></div>
+      <div class="f-art f-art-audio">
+        <img src="zetraquina-inicio.jpg" alt="Ecrã de início da app">
+        <button class="onscreen-audio-btn" onclick="toggleZeAudio()" aria-label="Reproduzir Zé Traquina é fixe">
+          <span class="onscreen-audio-icon" id="audioBtn2">▶</span>
+        </button>
+      </div>
     </div>
 
     <div class="feature">
@@ -404,20 +428,26 @@
 <script>
   function toggleZeAudio(){
     const audio = document.getElementById('zeAudio');
-    const btn = document.getElementById('audioBtn');
     if (audio.paused) {
       audio.play();
-      btn.textContent = '⏸';
     } else {
       audio.pause();
-      btn.textContent = '▶';
     }
+  }
+  function syncAudioButtons(){
+    const audio = document.getElementById('zeAudio');
+    const icon = audio.paused ? '▶' : '⏸';
+    const btn1 = document.getElementById('audioBtn');
+    const btn2 = document.getElementById('audioBtn2');
+    if (btn1) btn1.textContent = icon;
+    if (btn2) btn2.textContent = icon;
   }
   document.addEventListener('DOMContentLoaded', function(){
     const audio = document.getElementById('zeAudio');
-    const btn = document.getElementById('audioBtn');
     if (audio) {
-      audio.addEventListener('ended', function(){ btn.textContent = '▶'; });
+      audio.addEventListener('play', syncAudioButtons);
+      audio.addEventListener('pause', syncAudioButtons);
+      audio.addEventListener('ended', syncAudioButtons);
     }
   });
 </script>
