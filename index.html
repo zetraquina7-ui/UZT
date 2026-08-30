@@ -74,7 +74,9 @@
     padding:16px 28px;border-radius:16px;font-size:1rem;
     box-shadow:0 5px 0 var(--navy-soft);border:none;cursor:default;
     display:inline-flex;align-items:center;gap:10px;
+    animation:floaty-soft 3.2s ease-in-out infinite;
   }
+  @keyframes floaty-soft{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
   .btn-note{font-size:0.85rem;color:var(--ink-soft);font-weight:600;margin-top:26px;}
   .hero-art{position:relative;}
   .blob{
@@ -199,7 +201,7 @@
     .badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;max-width:320px;}
   }
   @media (prefers-reduced-motion: reduce){
-    .blob,.float-badge{animation:none;}
+    .blob,.float-badge,.btn-primary{animation:none;}
   }
 </style>
 </head>
