@@ -49,9 +49,8 @@
     display:flex;flex-direction:column;align-items:center;gap:8px;
     padding:12px 24px;max-width:1140px;margin:0 auto;
   }
-  .brand{display:flex;align-items:stretch;gap:14px;color:var(--navy);}
-  .brand img{width:auto;object-fit:contain;flex-shrink:0;}
-  .brand-text{font-family:'Comic Neue',cursive;font-weight:700;font-size:1.5rem;line-height:1.15;display:inline-block;text-align:center;}
+  .nav-logo{height:56px;width:auto;}
+  .nav-banner{width:100%;max-width:640px;border-radius:16px;box-shadow:0 8px 20px rgba(27,42,80,0.18);}
   .pill{
     background:var(--navy);color:#fff;font-family:'Baloo 2';font-weight:600;
     padding:10px 20px;border-radius:999px;font-size:0.85rem;white-space:nowrap;
@@ -181,7 +180,7 @@
     .phone-mock{width:200px;}
     .phone-mock img{height:350px;}
     .f-art{max-width:220px;}
-    .brand-text{font-size:1.15rem;}
+    .nav-logo{height:44px;}
   }
   @media (prefers-reduced-motion: reduce){
     .blob,.float-badge{animation:none;}
@@ -192,7 +191,8 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <div class="brand"><img src="zetraquina-logo.jpg" alt="Logótipo UZT"><span class="brand-text">Universo Educativo<br>Zé Traquina</span></div>
+    <img class="nav-logo" src="zetraquina-logo.jpg" alt="Logótipo UZT">
+    <img class="nav-banner" src="zetraquina-banner.png" alt="Universo Educativo Zé Traquina">
     <div class="pill">Brevemente na Google Play</div>
   </div>
 </header>
