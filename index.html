@@ -139,6 +139,15 @@
   .path-section{position:relative;padding:60px 0 20px;}
   .path-title{text-align:center;margin-bottom:10px;}
   .path-title h2{font-size:2.1rem;}
+  .video-section{margin:40px auto 60px;}
+  .video-frame-wrap{
+    position:relative;width:100%;max-width:800px;margin:24px auto 0;
+    aspect-ratio:16/9;border-radius:20px;overflow:hidden;
+    box-shadow:0 20px 40px rgba(27,42,80,0.25);border:6px solid #fff;
+  }
+  .video-frame-wrap iframe{
+    position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+  }
   .path-title p{color:var(--ink-soft);text-align:center;max-width:520px;margin:0 auto 20px;}
   .trail{position:relative;}
   .trail svg.line{position:absolute;top:0;left:50%;transform:translateX(-50%);height:100%;width:6px;z-index:0;}
@@ -285,6 +294,23 @@
         <div class="float-badge b6">👨‍👩‍👧 Espaço Pais</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="video-section wrap">
+  <div class="path-title">
+    <h2>Conhece o Universo Educativo</h2>
+    <p>Um minuto para veres tudo o que o Zé Traquina tem para ti.</p>
+  </div>
+  <div class="video-frame-wrap">
+    <iframe
+      src="https://www.youtube.com/embed/A0KVvq0ha2Y"
+      title="Universo Educativo Zé Traquina - Apresentação"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
   </div>
 </section>
 
